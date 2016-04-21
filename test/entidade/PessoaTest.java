@@ -16,10 +16,9 @@ public class PessoaTest {
 
     @Test
     public void inicializacaoTest() {
-        Pessoa p1 = new Pessoa("José",41472365);
-        assertEquals(41472365,p1.getTelefone());
+        Pessoa p1 = new Pessoa("José",4444444);
+        assertEquals(4444444,p1.getTelefone());
         assertEquals("José",p1.getNome());
-        
-        
     }
+
 }
