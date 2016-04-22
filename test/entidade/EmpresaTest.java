@@ -14,9 +14,20 @@ import org.junit.Test;
  */
 public class EmpresaTest {
     @Test
-    public void inicializaçãotest(){
+    public void inicializaçãoTest(){
         Empresa empresa = new Empresa(123456789, "Empresa");
         assertEquals(123456789, empresa.getNumeroContrato());
         assertEquals("Empresa", empresa.getNomeEmpresa());
+    }
+    
+    @Test
+    public void alteracaoTest(){
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        assertEquals(123456789, empresa.getNumeroContrato());
+        assertEquals("Empresa", empresa.getNomeEmpresa());
+        empresa.setNomeEmpresa("NovaEmpresa");
+        empresa.setNumeroContrato(12345);
+        assertEquals(12345, empresa.getNumeroContrato());
+        assertEquals("NovaEmpresa", empresa.getNomeEmpresa());
     }
 }
