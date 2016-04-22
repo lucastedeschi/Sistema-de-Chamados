@@ -22,6 +22,7 @@ public class RegistroChamadoTest {
         Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
         RegistroChamado r = new RegistroChamado("Assunto", c, t);
         assertEquals("Assunto", r.getAssunto());
-        assertEquals(t, r.getTecnico());
+        
+        assertEquals(t, r.getTecnico()); 
     }
 }
