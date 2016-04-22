@@ -13,6 +13,7 @@ import org.junit.Test;
  * @author lucas
  */
 public class ClienteEmpresaTest {
+    //(acept = Assertion.error)
     @Test
     public void inicializacaoTest(){
         Empresa empresa = new Empresa(123456789, "Empresa");
