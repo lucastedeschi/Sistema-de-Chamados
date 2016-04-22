@@ -29,4 +29,21 @@ public class ChamadoTest {
         assertEquals("10", c.getVersaoSO());
         assertEquals("BD", c.getBancoDeDados());
     }
+    
+    @Test
+    public void alteracaoTest(){
+        Integer codigo = 1;
+        Tecnico t = new Tecnico("Tecnico", 123456);
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
+        Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
+        assertEquals("Titulo", c.getTitulo());
+        assertEquals("Descrição", c.getDescricao());
+        assertEquals(1, c.getPrioridade());
+        assertEquals(t, c.getTecnico());
+        assertEquals(cq, c.getCliente());
+        assertEquals("Windows", c.getSistemaOperacional());
+        assertEquals("10", c.getVersaoSO());
+        assertEquals("BD", c.getBancoDeDados());
+    }
 }
