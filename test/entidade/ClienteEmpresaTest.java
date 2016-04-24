@@ -24,6 +24,25 @@ public class ClienteEmpresaTest {
         assertEquals(codigo, cq.getCodigo());
         assertEquals("ClienteEmpresa", cq.getNome());
         assertEquals(12345678, cq.getTelefone());
-        
+    }
+    
+    @Test 
+    public void alteracaoTest(){
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        Integer codigo = 1;
+        ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
+        assertEquals(empresa, cq.getEmpresa());
+        assertEquals(123456, cq.getCpf());
+        assertEquals(codigo, cq.getCodigo());
+        assertEquals("ClienteEmpresa", cq.getNome());
+        assertEquals(12345678, cq.getTelefone());
+        cq.setNome("ClienteEmpresa2");
+        cq.setTelefone(12345);
+        cq.setCpf(123456);
+        assertEquals(empresa, cq.getEmpresa());
+        assertEquals(123456, cq.getCpf());
+        assertEquals(codigo, cq.getCodigo());
+        assertEquals("ClienteEmpresa2", cq.getNome());
+        assertEquals(12345, cq.getTelefone());
     }
 }
