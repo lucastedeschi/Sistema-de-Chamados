@@ -21,8 +21,7 @@ public class RegistroChamadoTest {
         ClienteEmpresa cq = new ClienteEmpresa(1, empresa, 123456, "ClienteEmpresa", 12345678);
         Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
         RegistroChamado r = new RegistroChamado("Assunto", c, t);
-        assertEquals("Assunto", r.getAssunto());
-        
+        assertEquals("Assunto", r.getAssunto()); 
         assertEquals(t, r.getTecnico()); 
     }
 }

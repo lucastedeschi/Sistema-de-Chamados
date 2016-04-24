@@ -45,5 +45,23 @@ public class ChamadoTest {
         assertEquals("Windows", c.getSistemaOperacional());
         assertEquals("10", c.getVersaoSO());
         assertEquals("BD", c.getBancoDeDados());
+        Tecnico t2 = new Tecnico("Tecnico2", 123456);
+        Empresa empresa2 = new Empresa(123456789, "Empresa2");
+        ClienteEmpresa cq2 = new ClienteEmpresa(codigo, empresa2, 123456, "ClienteEmpresa2", 12345678);
+        c.setBancoDeDados("BS2");
+        c.setTitulo("Titulo2");
+        c.setDescricao("Descrição2");
+        c.setTecnico(t2);
+        c.setCliente(cq2);
+        c.setSistemaOperacional("Linux");
+        c.setVersaoSO("Ubuntu");
+        assertEquals("Titulo2", c.getTitulo());
+        assertEquals("Descrição2", c.getDescricao());
+        assertEquals(1, c.getPrioridade());
+        assertEquals(t2, c.getTecnico());
+        assertEquals(cq2, c.getCliente());
+        assertEquals("Linux", c.getSistemaOperacional());
+        assertEquals("Ubuntu", c.getVersaoSO());
+        assertEquals("BS2", c.getBancoDeDados());
     }
 }
