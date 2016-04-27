@@ -8,6 +8,7 @@ package controle;
 import entidade.Empresa;
 import junit.framework.Assert;
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNull;
 import org.junit.Test;
 
 /**
@@ -35,6 +36,14 @@ public class ControleEmpresasTest {
         assertEquals("Empresa8", ei.getNomeEmpresa());
         assertEquals(123456789, ei.getNumeroContrato());
         
+    }
+    
+     @Test
+    public void inserirEmpresaDuplicadaTest() {
+        ControleEmpresas c = new ControleEmpresas();
+        Empresa e = c.retorna(12345670, "Empresa5");
+        assertNull(c.inserir(e.getNumeroContrato(), e.getNomeEmpresa()));
+
     }
 
      @Test
