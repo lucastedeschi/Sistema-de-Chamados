@@ -20,7 +20,7 @@ public class ControladorPrincipal {
     private TelaPrincipal telaPrincipal;
 
     public ControladorPrincipal() {
-        this.telaPrincipal = new TelaPrincipal(this);
+        //this.telaPrincipal = new TelaPrincipal(this);
         this.ctrTecnicos = new ControleTecnicos();
         this.ctrChamados = new ControleChamados();
         this.ctrClientes = new ControleClientes();
