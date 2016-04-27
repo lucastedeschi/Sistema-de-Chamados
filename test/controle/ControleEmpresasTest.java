@@ -19,7 +19,7 @@ import org.junit.Test;
 public class ControleEmpresasTest {
 
     @Test
-    public void inserirEmpresaTest() {
+    public void inserirTest() {
         ControleEmpresas ce = new ControleEmpresas();
         Empresa e = new Empresa(12345670, "Empresa5");
         ce.inserir(e.getNumeroContrato(), e.getNomeEmpresa());
@@ -29,7 +29,7 @@ public class ControleEmpresasTest {
     }
 
     @Test
-    public void inserirEmpresaDuplicadaTest() {
+    public void inserirDuplicaTest() {
         ControleEmpresas c = new ControleEmpresas();
         Empresa ee = c.retorna(12345670, "Empresa5");
         assertNull(c.inserir(ee.getNumeroContrato(), ee.getNomeEmpresa()));
