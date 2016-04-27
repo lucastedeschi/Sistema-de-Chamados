@@ -25,7 +25,7 @@ public class ControleEmpresas implements IControlador {
         //fiz isso soh pra nao quebrar os metodos dessa classe por enquanto, sei q
         //nao deveria ficar aqui
         this.empresas = mapeadorEmpresa.getEmpresas();
-        this.telaEmpresa = new TelaCadastroEmpresa(this);
+        //this.telaEmpresa = new TelaCadastroEmpresa(this);
     }
 
     public Empresa retorna(long nmr, String nome) {
