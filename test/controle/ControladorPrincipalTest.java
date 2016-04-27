@@ -5,6 +5,7 @@
  */
 package controle;
 
+import junit.framework.Assert;
 import static junit.framework.Assert.assertNotNull;
 import org.junit.Test;
 
@@ -17,10 +18,10 @@ public class ControladorPrincipalTest {
     @Test
     public void incializacaoTest() {
         ControladorPrincipal c = new ControladorPrincipal();
-        assertNotNull(c.getCtrChamados());
-        assertNotNull(c.getCtrClientes());
-        assertNotNull(c.getCtrEmpresa());
-        assertNotNull(c.getCtrTecnicos());
+        Assert.assertNotNull(c.getCtrChamados());
+        Assert.assertNotNull(c.getCtrClientes());
+        Assert.assertNotNull(c.getCtrEmpresa());
+        Assert.assertNotNull(c.getCtrTecnicos());
         
     }
 

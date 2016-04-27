@@ -24,15 +24,15 @@ public class ControleEmpresasTest {
         Empresa e = new Empresa(12345670, "Empresa5");
         ce.inserir(e.getNumeroContrato(), e.getNomeEmpresa());
         Empresa ei = ce.retorna(12345670, "Empresa5");
-        assertTrue(ei.getNomeEmpresa().equals(e.getNomeEmpresa()));
-        assertTrue(ei.getNumeroContrato() == e.getNumeroContrato());
+        Assert.assertTrue(ei.getNomeEmpresa().equals(e.getNomeEmpresa()));
+        Assert.assertTrue(ei.getNumeroContrato() == e.getNumeroContrato());
     }
 
     @Test
     public void inserirDuplicaTest() {
         ControleEmpresas c = new ControleEmpresas();
         Empresa ee = c.retorna(12345670, "Empresa5");
-        assertNull(c.inserir(ee.getNumeroContrato(), ee.getNomeEmpresa()));
+        Assert.assertNull(c.inserir(ee.getNumeroContrato(), ee.getNomeEmpresa()));
 
     }
 
@@ -42,8 +42,8 @@ public class ControleEmpresasTest {
         ControleEmpresas c = new ControleEmpresas();
         c.inserir(e.getNumeroContrato(), e.getNomeEmpresa());
         Empresa ei = c.retorna(123456789, "Empresa8");
-        assertEquals("Empresa8", ei.getNomeEmpresa());
-        assertEquals(123456789, ei.getNumeroContrato());
+        Assert.assertEquals("Empresa8", ei.getNomeEmpresa());
+        Assert.assertEquals(123456789, ei.getNumeroContrato());
 
     }
 
