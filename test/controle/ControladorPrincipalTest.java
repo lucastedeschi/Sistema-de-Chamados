@@ -19,8 +19,9 @@ public class ControladorPrincipalTest {
         ControladorPrincipal c = new ControladorPrincipal();
         assertNotNull(c.getCtrChamados());
         assertNotNull(c.getCtrClientes());
-        assertNotNull(c.getCtrTecnicos());
         assertNotNull(c.getCtrEmpresa());
+        assertNotNull(c.getCtrTecnicos());
+        
     }
 
 }
