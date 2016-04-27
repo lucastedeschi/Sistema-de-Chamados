@@ -5,7 +5,7 @@
  */
 package entidade;
 
-import static junit.framework.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -20,14 +20,14 @@ public class ChamadoTest {
         Empresa empresa = new Empresa(123456789, "Empresa");
         ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
         Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
-        assertEquals("Titulo", c.getTitulo());
-        assertEquals("Descrição", c.getDescricao());
-        assertEquals(1, c.getPrioridade());
-        assertEquals(t, c.getTecnico());
-        assertEquals(cq, c.getCliente());
-        assertEquals("Windows", c.getSistemaOperacional());
-        assertEquals("10", c.getVersaoSO());
-        assertEquals("BD", c.getBancoDeDados());
+        Assert.assertEquals("Titulo", c.getTitulo());
+        Assert.assertEquals("Descrição", c.getDescricao());
+        Assert.assertEquals(1, c.getPrioridade());
+        Assert.assertEquals(t, c.getTecnico());
+        Assert.assertEquals(cq, c.getCliente());
+        Assert.assertEquals("Windows", c.getSistemaOperacional());
+        Assert.assertEquals("10", c.getVersaoSO());
+        Assert.assertEquals("BD", c.getBancoDeDados());
     }
     
     @Test
@@ -37,14 +37,14 @@ public class ChamadoTest {
         Empresa empresa = new Empresa(123456789, "Empresa");
         ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
         Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
-        assertEquals("Titulo", c.getTitulo());
-        assertEquals("Descrição", c.getDescricao());
-        assertEquals(1, c.getPrioridade());
-        assertEquals(t, c.getTecnico());
-        assertEquals(cq, c.getCliente());
-        assertEquals("Windows", c.getSistemaOperacional());
-        assertEquals("10", c.getVersaoSO());
-        assertEquals("BD", c.getBancoDeDados());
+        Assert.assertEquals("Titulo", c.getTitulo());
+        Assert.assertEquals("Descrição", c.getDescricao());
+        Assert.assertEquals(1, c.getPrioridade());
+        Assert.assertEquals(t, c.getTecnico());
+        Assert.assertEquals(cq, c.getCliente());
+        Assert.assertEquals("Windows", c.getSistemaOperacional());
+        Assert.assertEquals("10", c.getVersaoSO());
+        Assert.assertEquals("BD", c.getBancoDeDados());
         Tecnico t2 = new Tecnico("Tecnico2", 123456);
         Empresa empresa2 = new Empresa(123456789, "Empresa2");
         ClienteEmpresa cq2 = new ClienteEmpresa(codigo, empresa2, 123456, "ClienteEmpresa2", 12345678);
@@ -55,13 +55,13 @@ public class ChamadoTest {
         c.setCliente(cq2);
         c.setSistemaOperacional("Linux");
         c.setVersaoSO("Ubuntu");
-        assertEquals("Titulo2", c.getTitulo());
-        assertEquals("Descrição2", c.getDescricao());
-        assertEquals(1, c.getPrioridade());
-        assertEquals(t2, c.getTecnico());
-        assertEquals(cq2, c.getCliente());
-        assertEquals("Linux", c.getSistemaOperacional());
-        assertEquals("Ubuntu", c.getVersaoSO());
-        assertEquals("BS2", c.getBancoDeDados());
+        Assert.assertEquals("Titulo2", c.getTitulo());
+        Assert.assertEquals("Descrição2", c.getDescricao());
+        Assert.assertEquals(1, c.getPrioridade());
+        Assert.assertEquals(t2, c.getTecnico());
+        Assert.assertEquals(cq2, c.getCliente());
+        Assert.assertEquals("Linux", c.getSistemaOperacional());
+        Assert.assertEquals("Ubuntu", c.getVersaoSO());
+        Assert.assertEquals("BS2", c.getBancoDeDados());
     }
 }

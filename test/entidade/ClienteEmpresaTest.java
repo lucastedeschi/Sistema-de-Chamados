@@ -5,7 +5,7 @@
  */
 package entidade;
 
-import static junit.framework.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -19,11 +19,11 @@ public class ClienteEmpresaTest {
         Empresa empresa = new Empresa(123456789, "Empresa");
         Integer codigo = 1;
         ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
-        assertEquals(empresa, cq.getEmpresa());
-        assertEquals(123456, cq.getCpf());
-        assertEquals(codigo, cq.getCodigo());
-        assertEquals("ClienteEmpresa", cq.getNome());
-        assertEquals(12345678, cq.getTelefone());
+        Assert.assertEquals(empresa, cq.getEmpresa());
+        Assert.assertEquals(123456, cq.getCpf());
+        Assert.assertEquals(codigo, cq.getCodigo());
+        Assert.assertEquals("ClienteEmpresa", cq.getNome());
+        Assert.assertEquals(12345678, cq.getTelefone());
     }
     
     @Test 
@@ -31,18 +31,18 @@ public class ClienteEmpresaTest {
         Empresa empresa = new Empresa(123456789, "Empresa");
         Integer codigo = 1;
         ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
-        assertEquals(empresa, cq.getEmpresa());
-        assertEquals(123456, cq.getCpf());
-        assertEquals(codigo, cq.getCodigo());
-        assertEquals("ClienteEmpresa", cq.getNome());
-        assertEquals(12345678, cq.getTelefone());
+        Assert.assertEquals(empresa, cq.getEmpresa());
+        Assert.assertEquals(123456, cq.getCpf());
+        Assert.assertEquals(codigo, cq.getCodigo());
+        Assert.assertEquals("ClienteEmpresa", cq.getNome());
+        Assert.assertEquals(12345678, cq.getTelefone());
         cq.setNome("ClienteEmpresa2");
         cq.setTelefone(12345);
         cq.setCpf(123456);
-        assertEquals(empresa, cq.getEmpresa());
-        assertEquals(123456, cq.getCpf());
-        assertEquals(codigo, cq.getCodigo());
-        assertEquals("ClienteEmpresa2", cq.getNome());
-        assertEquals(12345, cq.getTelefone());
+        Assert.assertEquals(empresa, cq.getEmpresa());
+        Assert.assertEquals(123456, cq.getCpf());
+        Assert.assertEquals(codigo, cq.getCodigo());
+        Assert.assertEquals("ClienteEmpresa2", cq.getNome());
+        Assert.assertEquals(12345, cq.getTelefone());
     }
 }

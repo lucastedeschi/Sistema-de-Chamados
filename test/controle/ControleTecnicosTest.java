@@ -5,7 +5,7 @@
  */
 package controle;
 
-import static junit.framework.Assert.*;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**

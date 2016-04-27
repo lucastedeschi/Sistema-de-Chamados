@@ -5,8 +5,7 @@
  */
 package controle;
 
-import junit.framework.Assert;
-import static junit.framework.Assert.assertNotNull;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**

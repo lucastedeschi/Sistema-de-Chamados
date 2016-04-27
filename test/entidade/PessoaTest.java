@@ -5,7 +5,7 @@
  */
 package entidade;
 
-import static junit.framework.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -17,19 +17,19 @@ public class PessoaTest {
     @Test
     public void inicializacaoTest() {
         Pessoa p1 = new Pessoa("José",4444444);
-        assertEquals(4444444,p1.getTelefone());
-        assertEquals("José",p1.getNome());
+        Assert.assertEquals(4444444,p1.getTelefone());
+        Assert.assertEquals("José",p1.getNome());
     }
     
     @Test
     public void alteracaoTest(){
         Pessoa p1 = new Pessoa("José",4444444);
-        assertEquals(4444444,p1.getTelefone());
-        assertEquals("José",p1.getNome());
+        Assert.assertEquals(4444444,p1.getTelefone());
+        Assert.assertEquals("José",p1.getNome());
         p1.setNome("João");
         p1.setTelefone(55555);
-        assertEquals(55555,p1.getTelefone());
-        assertEquals("João",p1.getNome());
+        Assert.assertEquals(55555,p1.getTelefone());
+        Assert.assertEquals("João",p1.getNome());
     }
 
 }

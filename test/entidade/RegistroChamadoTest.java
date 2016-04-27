@@ -5,7 +5,7 @@
  */
 package entidade;
 
-import static junit.framework.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -20,8 +20,8 @@ public class RegistroChamadoTest {
         ClienteEmpresa cq = new ClienteEmpresa(1, empresa, 123456, "ClienteEmpresa", 12345678);
         Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
         RegistroChamado r = new RegistroChamado("Assunto", c, t);
-        assertEquals("Assunto", r.getAssunto()); 
-        assertEquals(t, r.getTecnico()); 
+        Assert.assertEquals("Assunto", r.getAssunto()); 
+        Assert.assertEquals(t, r.getTecnico()); 
     }
     
     @Test
@@ -31,12 +31,12 @@ public class RegistroChamadoTest {
         ClienteEmpresa cq = new ClienteEmpresa(1, empresa, 123456, "ClienteEmpresa", 12345678);
         Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
         RegistroChamado r = new RegistroChamado("Assunto", c, t);
-        assertEquals("Assunto", r.getAssunto()); 
-        assertEquals(t, r.getTecnico()); 
+        Assert.assertEquals("Assunto", r.getAssunto()); 
+        Assert.assertEquals(t, r.getTecnico()); 
         Tecnico t2 = new Tecnico("Tecnico2", 123456);
         r.setAssunto("Assunto2");
         r.setTecnico(t2);
-        assertEquals("Assunto2", r.getAssunto());
-        assertEquals(t2, r.getTecnico());
+        Assert.assertEquals("Assunto2", r.getAssunto());
+        Assert.assertEquals(t2, r.getTecnico());
     }
 }

@@ -6,10 +6,7 @@
 package controle;
 
 import entidade.Empresa;
-import junit.framework.Assert;
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNull;
-import static junit.framework.Assert.assertTrue;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**

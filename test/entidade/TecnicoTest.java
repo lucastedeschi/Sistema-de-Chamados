@@ -5,7 +5,7 @@
  */
 package entidade;
 
-import static junit.framework.Assert.assertEquals;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -16,18 +16,18 @@ public class TecnicoTest {
     @Test
     public void inicializacaoTest(){
         Tecnico t = new Tecnico("Tecnico", 123456);
-        assertEquals("Tecnico", t.getNome());
-        assertEquals(123456, t.getTelefone());
+        Assert.assertEquals("Tecnico", t.getNome());
+        Assert.assertEquals(123456, t.getTelefone());
     }
     
     @Test
     public void alteracaoTest(){
         Tecnico t = new Tecnico("Tecnico", 123456);
-        assertEquals("Tecnico", t.getNome());
-        assertEquals(123456, t.getTelefone());
+        Assert.assertEquals("Tecnico", t.getNome());
+        Assert.assertEquals(123456, t.getTelefone());
         t.setNome("NovoTecnico");
         t.setTelefone(12345);
-        assertEquals("NovoTecnico", t.getNome());
-        assertEquals(12345, t.getTelefone());
+        Assert.assertEquals("NovoTecnico", t.getNome());
+        Assert.assertEquals(12345, t.getTelefone());
     }
 }

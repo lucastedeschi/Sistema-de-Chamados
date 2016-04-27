@@ -49,7 +49,7 @@ public class ControleClientesTest {
     }
     
     @Test
-    public void getClienteTest() {
+    public void readClienteTest() {
         ControleClientes controller = new ControleClientes();
         Empresa empresa = new Empresa(123, "Empresa");
         ClienteEmpresa ce = controller.incluiNovoCliente(empresa, 11111111, "Nome", 44448888);

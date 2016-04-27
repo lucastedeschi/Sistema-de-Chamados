@@ -5,6 +5,8 @@
  */
 package controle;
 
+import org.junit.Assert;
+
 /**
  *
  * @author lucas
