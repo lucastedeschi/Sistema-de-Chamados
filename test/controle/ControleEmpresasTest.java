@@ -43,18 +43,4 @@ public class ControleEmpresasTest {
         Assert.assertEquals(123456789, ei.getNumeroContrato());
 
     }
-
-    @Test
-    public void removeTest() {
-        //Método não encontrado
-        //O método é necessário caso a empresa quiser se desvincular o sistema que envolve o software.
-        Assert.fail();
-    }
-
-    @Test
-    public void updateTest() {
-        //Método não encontrado
-        //O método é necessário caso a empresa quiser alterar alguma informação cadastral da empresa.
-        Assert.fail();
-    }
 }

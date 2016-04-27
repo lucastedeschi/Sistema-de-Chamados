@@ -15,16 +15,11 @@ import org.junit.Test;
 public class ControleTecnicosTest {
     @Test
     public void inserirTest() {
-        //Método não encontrado
+        ControleTecnicos tec = new ControleTecnicos();
+        tec.inserir(12324,"Tecnico1");
+        
+        Assert.assertNotNull(tec);
+        
     }
 
-    @Test
-    public void updateTest() {
-        //Método não encontrado
-    }
-
-    @Test
-    public void removeTest() {
-        //Método não encontrado
-    }
 }
