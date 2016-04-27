@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import apresentacao.TelaCadastroEmpresa;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 
 public class ControleEmpresas implements IControlador {
 
