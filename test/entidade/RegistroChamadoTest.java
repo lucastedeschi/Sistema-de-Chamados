@@ -66,4 +66,5 @@ public class RegistroChamadoTest {
         Assert.assertNotEquals("", r.getAssunto());
         Assert.assertEquals(t2, r.getTecnico());
     }
+    
 }

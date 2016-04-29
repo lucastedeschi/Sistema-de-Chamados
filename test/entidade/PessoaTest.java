@@ -49,5 +49,25 @@ public class PessoaTest {
         Assert.assertEquals(55555,p1.getTelefone());
         Assert.assertNotEquals("",p1.getNome());
     }
+    
+    @Test
+    public void inicializacaoNumNegativoTest() {
+        Pessoa p1 = new Pessoa("José",-4444444);
+        if(-4444444 == p1.getTelefone()){
+            Assert.fail("Número negativo foi adicionado como telefone.");
+        }
+    }
+    
+    @Test
+    public void alteracaoNumNegativoTest(){
+        Pessoa p1 = new Pessoa("José",4444444);
+        Assert.assertEquals(4444444,p1.getTelefone());
+        Assert.assertEquals("José",p1.getNome());
+        p1.setNome("João");
+        p1.setTelefone(-55555);
+        if(-55555 == p1.getTelefone()){
+            Assert.fail("Número negativo foi adicionado como telefone.");
+        }
+    }
 
 }
