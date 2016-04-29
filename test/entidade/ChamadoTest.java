@@ -64,4 +64,57 @@ public class ChamadoTest {
         Assert.assertEquals("Ubuntu", c.getVersaoSO());
         Assert.assertEquals("BS2", c.getBancoDeDados());
     }
+    
+    @Test
+    public void inicializacaoNulaTest(){
+        Integer codigo = 1;
+        Tecnico t = new Tecnico("Tecnico", 123456);
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
+        Chamado c = new Chamado("", "", 1, t, cq, "", "", "");
+        Assert.assertNotEquals("", c.getTitulo());
+        Assert.assertNotEquals("", c.getDescricao());
+        Assert.assertEquals(1, c.getPrioridade());
+        Assert.assertEquals(t, c.getTecnico());
+        Assert.assertEquals(cq, c.getCliente());
+        Assert.assertNotEquals("", c.getSistemaOperacional());
+        Assert.assertNotEquals("", c.getVersaoSO());
+        Assert.assertNotEquals("", c.getBancoDeDados());
+    }
+    
+    @Test
+    public void alteracaoNulaTest(){
+        Integer codigo = 1;
+        Tecnico t = new Tecnico("Tecnico", 123456);
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
+        Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
+        Assert.assertEquals("Titulo", c.getTitulo());
+        Assert.assertEquals("Descrição", c.getDescricao());
+        Assert.assertEquals(1, c.getPrioridade());
+        Assert.assertEquals(t, c.getTecnico());
+        Assert.assertEquals(cq, c.getCliente());
+        Assert.assertEquals("Windows", c.getSistemaOperacional());
+        Assert.assertEquals("10", c.getVersaoSO());
+        Assert.assertEquals("BD", c.getBancoDeDados());
+        Tecnico t2 = new Tecnico("Tecnico2", 123456);
+        Empresa empresa2 = new Empresa(123456789, "Empresa2");
+        ClienteEmpresa cq2 = new ClienteEmpresa(codigo, empresa2, 123456, "ClienteEmpresa2", 12345678);
+        c.setBancoDeDados("");
+        c.setTitulo("");
+        c.setDescricao("");
+        c.setTecnico(t2);
+        c.setCliente(cq2);
+        c.setSistemaOperacional("");
+        c.setVersaoSO("");
+        Assert.assertNotEquals("", c.getTitulo());
+        Assert.assertNotEquals("", c.getDescricao());
+        Assert.assertEquals(1, c.getPrioridade());
+        Assert.assertEquals(t2, c.getTecnico());
+        Assert.assertEquals(cq2, c.getCliente());
+        Assert.assertNotEquals("", c.getSistemaOperacional());
+        Assert.assertNotEquals("", c.getVersaoSO());
+        Assert.assertNotEquals("", c.getBancoDeDados());
+    }
+    
 }
