@@ -48,4 +48,26 @@ public class EmpresaTest {
         Assert.assertEquals(12345, empresa.getNumeroContrato());
         Assert.assertNotEquals("", empresa.getNomeEmpresa());
     }
+    @Test
+    public void inicializaçãoNumNegativoTest(){
+        Empresa empresa = new Empresa(-123456789, "Empresa");
+        if(-123456789 == empresa.getNumeroContrato()){
+            Assert.fail("O número de Número de Contrato ficou como negativo.");
+        }
+        
+    }
+    
+    @Test
+    public void alteracaoNumNegativoTest(){
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        Assert.assertEquals(123456789, empresa.getNumeroContrato());
+        Assert.assertEquals("Empresa", empresa.getNomeEmpresa());
+        empresa.setNomeEmpresa("NovaEmpresa");
+        empresa.setNumeroContrato(-12345);
+        if(-12345 == empresa.getNumeroContrato()){
+            Assert.fail("O número de Número de Contrato ficou como negativo.");
+        }
+        
+    }
+    
 }
