@@ -45,4 +45,36 @@ public class ClienteEmpresaTest {
         Assert.assertEquals("ClienteEmpresa2", cq.getNome());
         Assert.assertEquals(12345, cq.getTelefone());
     }
+    
+    @Test
+    public void inicializacaoNulaTest(){
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        Integer codigo = 1;
+        ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "", 12345678);
+        Assert.assertEquals(empresa, cq.getEmpresa());
+        Assert.assertEquals(123456, cq.getCpf());
+        Assert.assertEquals(codigo, cq.getCodigo());
+        Assert.assertNotEquals("", cq.getNome());
+        Assert.assertEquals(12345678, cq.getTelefone());
+    }
+    
+    @Test 
+    public void alteracaoNulaTest(){
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        Integer codigo = 1;
+        ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
+        Assert.assertEquals(empresa, cq.getEmpresa());
+        Assert.assertEquals(123456, cq.getCpf());
+        Assert.assertEquals(codigo, cq.getCodigo());
+        Assert.assertEquals("ClienteEmpresa", cq.getNome());
+        Assert.assertEquals(12345678, cq.getTelefone());
+        cq.setNome("");
+        cq.setTelefone(12345);
+        cq.setCpf(123456);
+        Assert.assertEquals(empresa, cq.getEmpresa());
+        Assert.assertEquals(123456, cq.getCpf());
+        Assert.assertEquals(codigo, cq.getCodigo());
+        Assert.assertNotEquals("", cq.getNome());
+        Assert.assertEquals(12345, cq.getTelefone());
+    }
 }
