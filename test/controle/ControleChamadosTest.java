@@ -138,7 +138,6 @@ public class ControleChamadosTest {
                 + "\nTécnico responsável pelo chamado: " + ref.getTecnico()
                 + "\nCliente requisitor do chamado: " + ref.getCliente() + "\n";
 
-        System.out.println(ref.getCodigo());
         RegistroChamado rc = new RegistroChamado("assunto", ref, t);
 
         relatorio += "\nRelatório de registros de acompanhamento:"
@@ -150,7 +149,6 @@ public class ControleChamadosTest {
                 + "\nSolução do problema: " + ref.getSolucaoProblema();;
 
        Assert.assertEquals(relatorio, cc.emitirRelatorios(ref.getCodigo()));
-        
-       // Assert.fail("o metodo nao retorna oque se espera, problema na implementação");
+       
     }
 }
