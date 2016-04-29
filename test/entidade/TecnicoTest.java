@@ -39,6 +39,14 @@ public class TecnicoTest {
     }
     
     @Test
+    public void inicializacaoNumNegativoTest(){
+        Tecnico t = new Tecnico("Tecnico", -123456);
+        if(-123456 == t.getTelefone()){
+            Assert.fail("Número negativo foi adicionado como telefone.");
+        }
+    }
+    
+    @Test
     public void alteracaoNulaTest(){
         Tecnico t = new Tecnico("Tecnico", 123456);
         Assert.assertEquals("Tecnico", t.getNome());
