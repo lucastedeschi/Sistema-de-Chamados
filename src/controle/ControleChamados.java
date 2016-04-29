@@ -114,10 +114,10 @@ public class ControleChamados {
     			problema = "Problema de Desempenho";
     			break;
     	}
-
+       
         Collection<Chamado> chamados = chamadoDAO.getChamados();
         Collection<RegistroChamado> registros = chamadoDAO.getRegistros();
-
+        
         String relatorio = "";
 
         for (Chamado c : chamados) {
@@ -154,8 +154,9 @@ public class ControleChamados {
                     	"\nTipo de problema do chamado: " + ref.getTipoProblema() + 
                     	"\nTécnico responsável pelo chamado: " + ref.getTecnico() + 
                     	"\nCliente requisitor do chamado: " + ref.getCliente() + "\n";
-                
+      
                 for(RegistroChamado rc : registros){
+                    
                 	if(rc.getChamado().equals(ref)){
                 		relatorio += "\nRelatório de registros de acompanhamento:" + 
                 	"\nData: " + rc.getData() + 
@@ -166,6 +167,7 @@ public class ControleChamados {
                 	"\nSolução do problema: " + ref.getSolucaoProblema();
                 	}
                 }
+            
             }
         }
 

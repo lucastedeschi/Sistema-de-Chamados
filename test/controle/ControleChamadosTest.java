@@ -5,9 +5,11 @@
  */
 package controle;
 
+import Persistencia.ChamadoDAO;
 import entidade.Chamado;
 import entidade.ClienteEmpresa;
 import entidade.Empresa;
+import entidade.RegistroChamado;
 import entidade.Tecnico;
 import org.junit.Assert;
 import org.junit.Test;
@@ -66,10 +68,10 @@ public class ControleChamadosTest {
         Chamado c = new Chamado(4, "Titulo", "Descrição", 1, t, cq, "SO", "10", "tipoConexao", "enderecoRede");
         ControleChamados cc = new ControleChamados();
         cc.InserirChamadoRede(c.getTitulo(), c.getDescricao(), c.getPrioridade(), t, cq, c.getSistemaOperacional(), c.getVersaoSO(), c.getTipoConexao(), c.getEnderecoRede());
+        //Chamado i = cc.buscaPeloCodigo(c.getCodigo());
 
-        Chamado i = cc.buscaPeloCodigo(c.getCodigo());
-
-        Assert.assertEquals(c, i);
+        //Assert.assertEquals(c, i);
+        Assert.fail("O método não funciona, pois quando é realizado a busca uma exceção de cast é disparada");
 
     }
 
@@ -111,8 +113,44 @@ public class ControleChamadosTest {
     public void emitirRelatoriobancoDeDadosTest() {
 
         ControleChamados cc = new ControleChamados();
-        String db = cc.emitirRelatorios(1);
-        Assert.assertNotNull(db);
+        Tecnico t = new Tecnico("Tecnico", 1234567);
 
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        ClienteEmpresa cq = new ClienteEmpresa(2, empresa, 1234567, "ClienteEmpresa", 123456789);
+        Chamado ref = new Chamado(7, "Titulo", "Descrição", 1, t, cq, "SO", "10", "tipoConexao", "enderecoRede");
+        
+        ChamadoDAO cDAO = new ChamadoDAO();
+        
+        cDAO.put(ref);
+        
+        
+        int prioridade = 2;
+
+        String relatorio = "\n" + "--------" + "\nData de abertura do chamado: "
+                + ref.getData()
+                + "\nHor�rio de abertura do chamado: " + ref.getHora()
+                + "\nTítulo do chamado: " + ref.getTitulo()
+                + "\nCódigo do chamado: " + ref.getCodigo()
+                + "\nDescrição do chamado: " + ref.getDescricao()
+                + "\nPrioridade do chamado: " + prioridade
+                + "\nStatus do chamado: " + ref.getStatus()
+                + "\nTipo de problema do chamado: " + ref.getTipoProblema()
+                + "\nTécnico responsável pelo chamado: " + ref.getTecnico()
+                + "\nCliente requisitor do chamado: " + ref.getCliente() + "\n";
+
+        System.out.println(ref.getCodigo());
+        RegistroChamado rc = new RegistroChamado("assunto", ref, t);
+
+        relatorio += "\nRelatório de registros de acompanhamento:"
+                + "\nData: " + rc.getData()
+                + "\nHora: " + rc.getHora()
+                + "\nAssunto: " + rc.getAssunto()
+                + "\nTécnico responsável: " + rc.getTecnico().getNome()
+                + "\nCausa do problema: " + ref.getCausaProblema()
+                + "\nSolução do problema: " + ref.getSolucaoProblema();;
+
+       Assert.assertEquals(relatorio, cc.emitirRelatorios(ref.getCodigo()));
+        
+       // Assert.fail("o metodo nao retorna oque se espera, problema na implementação");
     }
 }

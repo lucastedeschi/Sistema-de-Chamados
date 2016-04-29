@@ -79,7 +79,7 @@ public class ClienteEmpresaTest {
     }
     
     @Test
-    public void inicializacaoNumNegativoTest(){
+    public void inicializacaoCPFNegativoTest(){
         Empresa empresa = new Empresa(123456789, "Empresa");
         Integer codigo = 1;
         ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, -123456, "ClienteEmpresa", 12345678);
@@ -89,7 +89,35 @@ public class ClienteEmpresaTest {
     }
     
     @Test 
-    public void alteracaoNumNegativoTest(){
+    public void alteracaoTelNegativoTest(){
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        Integer codigo = 1;
+        ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
+        Assert.assertEquals(empresa, cq.getEmpresa());
+        Assert.assertEquals(123456, cq.getCpf());
+        Assert.assertEquals(codigo, cq.getCodigo());
+        Assert.assertEquals("ClienteEmpresa", cq.getNome());
+        Assert.assertEquals(12345678, cq.getTelefone());
+        cq.setNome("ClienteEmpresa2");
+        cq.setTelefone(-12345);
+        cq.setCpf(123456);
+        if(-12345 == cq.getTelefone()){
+            Assert.fail("O número de telefone ficou como negativo.");
+        }
+    }
+    
+    @Test
+    public void inicializacaoTelNegativoTest(){
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        Integer codigo = 1;
+        ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", -12345678);
+        if(-12345678 == cq.getTelefone()){
+            Assert.fail("O número de telefone ficou como negativo.");
+        }
+    }
+    
+    @Test 
+    public void alteracaoCPFNegativoTest(){
         Empresa empresa = new Empresa(123456789, "Empresa");
         Integer codigo = 1;
         ClienteEmpresa cq = new ClienteEmpresa(codigo, empresa, 123456, "ClienteEmpresa", 12345678);
