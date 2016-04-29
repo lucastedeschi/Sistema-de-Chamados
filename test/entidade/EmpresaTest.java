@@ -30,4 +30,22 @@ public class EmpresaTest {
         Assert.assertEquals(12345, empresa.getNumeroContrato());
         Assert.assertEquals("NovaEmpresa", empresa.getNomeEmpresa());
     }
+    
+    @Test
+    public void inicializaçãoNulaTest(){
+        Empresa empresa = new Empresa(123456789, "");
+        Assert.assertEquals(123456789, empresa.getNumeroContrato());
+        Assert.assertNotEquals("", empresa.getNomeEmpresa());
+    }
+    
+    @Test
+    public void alteracaoNulaTest(){
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        Assert.assertEquals(123456789, empresa.getNumeroContrato());
+        Assert.assertEquals("Empresa", empresa.getNomeEmpresa());
+        empresa.setNomeEmpresa("");
+        empresa.setNumeroContrato(12345);
+        Assert.assertEquals(12345, empresa.getNumeroContrato());
+        Assert.assertNotEquals("", empresa.getNomeEmpresa());
+    }
 }
