@@ -39,4 +39,31 @@ public class RegistroChamadoTest {
         Assert.assertEquals("Assunto2", r.getAssunto());
         Assert.assertEquals(t2, r.getTecnico());
     }
+    
+    @Test
+    public void inicializacaoNulaTest(){
+        Tecnico t = new Tecnico("Tecnico", 123456);
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        ClienteEmpresa cq = new ClienteEmpresa(1, empresa, 123456, "ClienteEmpresa", 12345678);
+        Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
+        RegistroChamado r = new RegistroChamado("", c, t);
+        Assert.assertNotEquals("", r.getAssunto()); 
+        Assert.assertEquals(t, r.getTecnico()); 
+    }
+    
+    @Test
+    public void alteracaoNulaTest(){
+        Tecnico t = new Tecnico("Tecnico", 123456);
+        Empresa empresa = new Empresa(123456789, "Empresa");
+        ClienteEmpresa cq = new ClienteEmpresa(1, empresa, 123456, "ClienteEmpresa", 12345678);
+        Chamado c = new Chamado("Titulo", "Descrição", 1, t, cq, "Windows", "10", "BD");
+        RegistroChamado r = new RegistroChamado("Assunto", c, t);
+        Assert.assertEquals("Assunto", r.getAssunto()); 
+        Assert.assertEquals(t, r.getTecnico()); 
+        Tecnico t2 = new Tecnico("Tecnico2", 123456);
+        r.setAssunto("");
+        r.setTecnico(t2);
+        Assert.assertNotEquals("", r.getAssunto());
+        Assert.assertEquals(t2, r.getTecnico());
+    }
 }
