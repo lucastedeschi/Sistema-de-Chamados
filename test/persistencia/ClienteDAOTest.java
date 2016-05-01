@@ -41,7 +41,7 @@ public class ClienteDAOTest {
     }
 
     @Test
-    public void GerarCodigoTest() {
+    public void gerarCodigoTest() {
         ClienteDAO cDAO = new ClienteDAO();
 
         int codigo = cDAO.gerarCodigo();
@@ -51,7 +51,7 @@ public class ClienteDAOTest {
     }
 
     @Test
-    public void HashMapTest() {
+    public void hashMapTest() {
         ClienteDAO cDAO = new ClienteDAO();
 
         HashMap<Long, ClienteEmpresa> empHash = cDAO.voltaCashCliente();
@@ -60,7 +60,7 @@ public class ClienteDAOTest {
     }
 
     @Test
-    public void InsereClienteTest() {
+    public void insereClienteTest() {
         ClienteDAO cDAO = new ClienteDAO();
         Empresa emp = new Empresa(111111, "LXN");
         ClienteEmpresa cEmp = new ClienteEmpresa(1234, emp, 3333333, "OI", 222222);
@@ -74,7 +74,7 @@ public class ClienteDAOTest {
     }
 
     @Test
-    public void BuscaClienteTest() {
+    public void buscaClienteTest() {
         ClienteDAO cDAO = new ClienteDAO();
         Empresa emp = new Empresa(111111, "LXN");
 

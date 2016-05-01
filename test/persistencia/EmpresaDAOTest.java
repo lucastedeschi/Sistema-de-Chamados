@@ -22,7 +22,7 @@ public class EmpresaDAOTest {
     }
 
     @Test
-    public void InserirEmpresaTest() {
+    public void inserirEmpresaTest() {
         Empresa emp = new Empresa(12345,"SAP");
         
         EmpresaDAO empDAO = new EmpresaDAO();
@@ -39,7 +39,7 @@ public class EmpresaDAOTest {
     }
 
     @Test
-    public void BuscarEmpresasTest() {
+    public void buscarEmpresasTest() {
         
         EmpresaDAO empDAO = new EmpresaDAO();
          Collection<Empresa> empresas = empDAO.getEmpresas();
@@ -49,7 +49,7 @@ public class EmpresaDAOTest {
     }
 
     @Test
-    public void VoltaEmpresaTest() {
+    public void voltaEmpresaTest() {
         EmpresaDAO empDAO = new EmpresaDAO();
         
         HashMap<Long,Empresa> hashRetornado = empDAO.voltaEmpresa();

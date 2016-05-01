@@ -21,7 +21,7 @@ public class TecnicoDAOTest {
     }
     
     @Test
-    public void GerarCodigoTest() {
+    public void gerarCodigoTest() {
         TecnicoDAO tDAO = new TecnicoDAO();
         
         int codigo = tDAO.gerarCodigo();
@@ -32,7 +32,7 @@ public class TecnicoDAOTest {
 
     
     @Test
-    public void HashMapTest() {
+    public void hashMapTest() {
         
         TecnicoDAO tDAO = new TecnicoDAO();
        
@@ -44,7 +44,7 @@ public class TecnicoDAOTest {
 
     
     @Test
-    public void InserirTecnicotest() {
+    public void inserirTecnicotest() {
         Tecnico tecnico = new Tecnico("Jose",333);
         TecnicoDAO tDAO = new TecnicoDAO();
         tDAO.put(tecnico);
@@ -55,7 +55,7 @@ public class TecnicoDAOTest {
     }
     
    @Test
-    public void BuscaTecnicoPeloCodigo() {
+    public void buscaTecnicoPeloCodigo() {
        
         Tecnico tecnico = new Tecnico("Jonas",333);
         TecnicoDAO tDAO = new TecnicoDAO();
