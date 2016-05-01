@@ -5,11 +5,9 @@
  */
 package persistencia;
 
-import entidade.BancoDeDados;
 import entidade.Chamado;
 import entidade.ClienteEmpresa;
 import entidade.Empresa;
-import entidade.SistemaOperacional;
 import entidade.Tecnico;
 import entidade.TipoConexao;
 import org.junit.Assert;
@@ -50,6 +48,7 @@ public class ChamadoDAOTest {
         Assert.assertEquals(dao.getChamados().size(), dao.gerarCodigo() - 1);
     }
 
+    @Test
     public void leituraChamadosTest() {
         Tecnico t =  new Tecnico("Tecnico", 111111111);
         Empresa e = new Empresa(1000, "Empresa");
